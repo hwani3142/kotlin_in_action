@@ -4,6 +4,7 @@ fun loadEmails(p: Person): List<String> {
     println("Person: Load emails once")
     return listOf<String>("a", "b", "c")
 }
+
 class Person(val name: String) {  // NOTE: inner class!
     val emails by lazy { loadEmails(this) }
 }

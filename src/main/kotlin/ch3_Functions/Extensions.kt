@@ -1,16 +1,20 @@
 package ch3_Functions
 
 data class People(val age: Int, val name: String)
+
 fun People.isAdult(): Boolean = age > 19
 
-data class Person(var age : Int = 5){
-    var name:String
+data class Person(var age: Int = 5) {
+    var name: String
         get() = name
-        set(value) {name = value}
+        set(value) {
+            name = value
+        }
 }
+
 fun Person.getAge() = this.age
 
-fun String.lastChar() : Char = get(length - 1)
+fun String.lastChar(): Char = get(length - 1)
 
 fun main() {
     val p1 = People(22, "aa")

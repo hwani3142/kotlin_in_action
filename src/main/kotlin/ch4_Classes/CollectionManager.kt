@@ -4,7 +4,7 @@ object CollectionManager {
     val ints = DelegatingCollection<Int>()
 
     fun sumAll(): Int {
-        var sum = 0;
+        var sum = 0
         for (value in ints) {
             sum += value
         }

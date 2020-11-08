@@ -3,6 +3,7 @@ package ch2_KotlinBasics
 fun max1(a: Int, b: Int): Int {
     return if (a > b) a else b  // 삼항연산자 대신. if는 식(expression)
 }
+
 fun max2(a: Int, b: Int) = if (a > b) a else b  // 식이 본문인 함수. Return type inference
 
 fun greet(str: String) {

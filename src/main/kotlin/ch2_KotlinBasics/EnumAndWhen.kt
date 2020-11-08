@@ -12,11 +12,13 @@ enum class ColorWithRGB(val r: Int, val g: Int, val b: Int) {
 
     fun rgb() = (r * 256 + g) * 256 + b
 }
-fun getWarmth1(color: ColorWithRGB) = when(color) {
+
+fun getWarmth1(color: ColorWithRGB) = when (color) {
     RED, ORANGE, YELLOW -> "warm"
     else -> "cold"
 }
-fun getWarmth2(color: ColorWithRGB) = when(color) {
+
+fun getWarmth2(color: ColorWithRGB) = when (color) {
     RED, ORANGE, YELLOW -> "warm"
     GREEN -> "neutral"
     BLUE, INDIGO, VIOLET -> "cold"
@@ -24,6 +26,7 @@ fun getWarmth2(color: ColorWithRGB) = when(color) {
 
 /* **Smart Cast** */
 interface Expr
+
 class Num(val Value: Int) : Expr
 class Sum(val left: Expr, val right: Expr) : Expr
 
@@ -35,6 +38,7 @@ fun eval1(e: Expr): Int {
     else
         throw IllegalArgumentException("Unknown expression")
 }
+
 fun eval2(e: Expr): Int = when (e) {
     is Num ->
         e.Value
@@ -65,6 +69,7 @@ fun main() {
         0 -> "짝"
         else -> "홀"
     }
+
     fun isEvenFun(num: Int) = when (num % 2) {
         0 -> "Even"
         else -> "odd"

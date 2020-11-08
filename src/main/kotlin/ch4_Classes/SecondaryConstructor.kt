@@ -1,10 +1,11 @@
 package ch4_Classes
 
 open class SecondaryConstructor<T> {
-    constructor(a : T) {
+    constructor(a: T) {
         println("1 arg '${a}' constructor")
     }
-    constructor(a : T, b : T) {
+
+    constructor(a: T, b: T) {
         println("2 args '${a}', '${b}' constructor")
     }
 }

@@ -8,7 +8,7 @@ infix fun Student.elderThan(other: Student) = Pair(this.name, other.name)
 
 fun main() {
     val p = 1.to("two")
-    val p_infix :Pair<Int, String> = 1 to "one"
+    val p_infix: Pair<Int, String> = 1 to "one"
     val (p_first, p_second) = 1 to "one"
     println(p_infix)
     println(p_infix.toList())
@@ -32,7 +32,7 @@ fun main() {
     }
 
     val list = arrayListOf<String>("1", "2", "3")
-    for ( (idx, item) in list.withIndex()) {
+    for ((idx, item) in list.withIndex()) {
         println("[${idx}] = ${item}")
     }
 

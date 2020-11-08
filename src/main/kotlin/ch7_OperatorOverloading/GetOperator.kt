@@ -1,6 +1,7 @@
 package ch7_OperatorOverloading
 
 data class Point(val x: Int, val y: Int)
+
 operator fun Point.get(index: Int): Int {
     return when (index) {
         0 -> x

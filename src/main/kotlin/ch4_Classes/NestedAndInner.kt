@@ -1,5 +1,15 @@
 package ch4_Classes
 
+/* Access modifier */
+//internal open class TalkativeButton {
+//    private fun yell() = println("Hey!")
+//    protected fun whisper() = println("Let's talk!")
+//}
+// fun TalkativeButton.giveSpeech() {
+//    yell()
+//    whisper()
+//}
+
 class Person(var nn: String) {
     //    constructor(name: String) {
 //        println(name)
@@ -12,10 +22,11 @@ class Person(var nn: String) {
     inner class innerClass {
         fun something() {
             a = 3 // 접근 가능
-            this@Person.d = 11;
+            this@Person.d = 11
             println("Has reference to outer class")
         }
     }
+
     class nestedClass {
         fun something() {
             // Inaccessible to member

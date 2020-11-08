@@ -1,19 +1,16 @@
-package ch2_KotlinBasics;
+package ch2_KotlinBasics
 
 // Default: not open
-open class Animal {
+open class Animal
 
-}
 class Dog : Animal() {  // Call constructor of base
 
 }
 
-open class AnimalwithName(var name: String) {
+open class AnimalwithName(var name: String)
 
-}
-class DogwithName(name2: String) : AnimalwithName(name2) {
+class DogwithName(name2: String) : AnimalwithName(name2)
 
-}
 // Custom property
 class Rectangle(val height: Int, val width: Int) {
     val isSquare: Boolean
@@ -30,16 +27,19 @@ abstract class A {
         println("Do something")
     }
 }
+
 class B : A() {
     override fun func1() {  // Require override keyword
         println("Called fun1")
     }
 }
+
 interface Runnable {
     fun run()
 
     fun fastRun() = println("Fast run!") // Same as 'default' method in JAVA
 }
+
 class Human : Runnable {
     override fun run() {
         println("Implement run")
