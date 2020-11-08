@@ -7,6 +7,16 @@ data class Student(val id: Int, val name: String)
 infix fun Student.elderThan(other: Student) = Pair(this.name, other.name)
 
 fun main() {
+    val p = 1.to("two")
+    val p_infix :Pair<Int, String> = 1 to "one"
+    val (p_first, p_second) = 1 to "one"
+    println(p_infix)
+    println(p_infix.toList())
+//println("${p_first} : ${p_second}") // Not works!!?
+    val mapTest = mapOf(1 to "one", "one" to 1, "2" to 3)
+    println(mapTest)
+    println("12.345-6.A".split("."))
+
     val st12 = Student(2012001, "DY")
     val st13 = Student(2013001, "JH")
     val (p1, p2) = st12 elderThan st13

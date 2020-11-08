@@ -20,4 +20,7 @@ fun main() {
 
     val lastCharacter = "Extensions".lastChar()
     println("${lastCharacter}")
+
+    val strings = listOf("first", "second", "third")
+    println(strings.last())
 }
