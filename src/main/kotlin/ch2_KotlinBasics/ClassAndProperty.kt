@@ -1,29 +1,5 @@
 package ch2_KotlinBasics;
 
-class Person(var nn: String) {
-    //    constructor(name: String) {
-//        println(name)
-//    }
-    var a = 1 // public
-    private val b = 2 // in file
-    protected val c = 3 // be inherited by parent
-    internal var d = 4 // between modules
-
-    inner class innerClass {
-        fun something() {
-            a = 3 // 접근 가능
-            this@Person.d = 11;
-            println("Has reference to outer class")
-        }
-    }
-    class nestedClass {
-        fun something() {
-            // Inaccessible to member
-//            a = 11;
-            println("Cannot access to property")
-        }
-    }
-}
 // Default: not open
 open class Animal {
 
@@ -37,6 +13,14 @@ open class AnimalwithName(var name: String) {
 }
 class DogwithName(name2: String) : AnimalwithName(name2) {
 
+}
+// Custom property
+class Rectangle(val height: Int, val width: Int) {
+    val isSquare: Boolean
+        //    get() { // Custom property getter
+//        return height == width
+//    }
+        get() = height == width
 }
 
 abstract class A {
@@ -63,14 +47,5 @@ class Human : Runnable {
 }
 
 fun main() {
-    var p = Person("asd")
-    println(p.nn)
-    p.a = 2
-    println(p.a)
-    var p2 = Person("qwe")
-    println(p2.a)
-
-//var a = A()
     var bb = B()
-
 }
