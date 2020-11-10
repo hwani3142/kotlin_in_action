@@ -1,6 +1,8 @@
 package ch10_AnnotationAndReflection
 
+import kotlin.reflect.KCallable
 import kotlin.reflect.KClass
+import kotlin.reflect.KFunction
 import kotlin.reflect.KProperty1
 import kotlin.reflect.full.memberProperties
 
@@ -19,7 +21,7 @@ fun tof(x: String): Int {
     return 1
 }
 
-fun main(args: Array<String>) {
+fun main() {
     println(kClass is KClass<Person>)
     println(kClass2 is KClass<Person>)
     println(kClass.qualifiedName)
@@ -35,9 +37,13 @@ fun main(args: Array<String>) {
         println(p.javaClass.kotlin.members)
         println(p.javaClass.kotlin.constructors)
     }
-    val tofVal = ::tof
+    val tofVal = ::tof  // KFunction type
     println(tofVal.javaClass.name)
-//    println(tofVal is String)
+    println(tofVal.call("aaa"))     // Call method1
+    println(tofVal.invoke("aaa"))       // Call method2
+    println(tofVal("aaa"))              // Call method3
+//    println(tofVal is Person2)
+    println(tofVal is KFunction<Int>)
     val memberProperty = Person::age
     println(memberProperty is KProperty1<Person, Int>)
 }
